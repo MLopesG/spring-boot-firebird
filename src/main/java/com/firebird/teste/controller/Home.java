@@ -6,11 +6,15 @@ import com.firebird.teste.service.DependenteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/api/v1")
 public class Home{
 
     @Autowired
@@ -32,7 +36,7 @@ public class Home{
         return ResponseEntity.ok(serviceDependentes.clientesDependentesAll(contrato));
     }
 
-    @GetMapping("/associado/{contrato}")
+    @GetMapping("/contrato/{contrato}")
     public ResponseEntity<?> infoAssociados(@PathVariable(value = "contrato") Integer contrato) {
         return ResponseEntity.ok(serviceCliente.clientesDependentesAll(contrato));
     }

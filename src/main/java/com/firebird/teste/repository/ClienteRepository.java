@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteModel, Long> {
-    @Query(value="select FIRST 10 * from cliente where situacao=1 and contrato = :contrato", nativeQuery = true)
+    @Query(value="select * from cliente where situacao=1 and contrato = :contrato", nativeQuery = true)
     List<ClienteModel> findCadastros(Integer contrato);
 }
