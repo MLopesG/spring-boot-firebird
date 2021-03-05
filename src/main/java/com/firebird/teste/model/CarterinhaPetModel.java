@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class CarterinhaModel {
+public class CarterinhaPetModel {
     private String tipo;
     @Id
     @Column(name = "idcliente")
@@ -24,10 +24,10 @@ public class CarterinhaModel {
     private String status; 
     private String validade;
 
-    public CarterinhaModel() {
+    public CarterinhaPetModel() {
     }
 
-    public CarterinhaModel(String tipo, Integer idcliente, Integer contrato, String titular, String nome, String cpf_cnpj, String raca, String especie, String altura, String peso, String cor, String ult_mes_ref_pg, Integer dias_atraso, String status, String validade) {
+    public CarterinhaPetModel(String tipo, Integer idcliente, Integer contrato, String titular, String nome, String cpf_cnpj, String raca, String especie, String altura, String peso, String cor, String ult_mes_ref_pg, Integer dias_atraso, String status, String validade) {
         this.tipo = tipo;
         this.idcliente = idcliente;
         this.contrato = contrato;
